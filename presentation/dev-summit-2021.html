@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-    <title>reveal.js</title>
+    <title>Building Web Apps with Open Source Mapping APIs</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -132,6 +132,119 @@
 						## Demos
 					</textarea
           >
+        </section>
+
+        <!-- BEGIN LEAFLET SECTION -->
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2 data-id="code-title">Esri Leaflet</h2>
+          <img src="img/arcgis-leaflet-tutorials.gif" width="500" height="375" alt="ArcGIS for Developers: Leaflet tutorials">
+          <a href="https://developers.arcgis.com/esri-leaflet/">https://developers.arcgis.com/esri-leaflet/</a>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2>Hello World!</h2>
+            
+          <pre><code class="hljs" data-trim data-line-numbers>
+            const apiKey = "YOUR-API-KEY";
+            const basemapEnum = "ArcGIS:Streets";
+
+            const map = L.map('map', {
+              minZoom: 2
+            }).setView([34.02,-118.805], 13);
+
+            L.esri.Vector.vectorBasemapLayer(basemapEnum, {
+              apiKey: apiKey
+            }).addTo(map);
+          </code></pre>
+
+          <a href="https://developers.arcgis.com/esri-leaflet/maps/display-a-map/">https://developers.arcgis.com/esri-leaflet/maps/display-a-map/</a>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2>Custom vector tile style</h2>
+            
+          <pre><code class="hljs" data-trim data-line-numbers>
+            const apiKey = "YOUR-API-KEY";
+
+            const map = L.map('map', {
+              minZoom: 2
+            }).setView([34.02,-118.805], 8);
+
+            L.esri.Vector.vectorBasemapLayer("6976148c11bd497d8624206f9ee03e30", {
+              apiKey: apiKey
+            }).addTo(map);
+          </code></pre>
+
+          <a href="https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/">https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/</a>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2>Search for an address</h2>
+            
+          <pre><code class="hljs" data-trim data-line-numbers>
+            const searchControl = L.esri.Geocoding.geosearch({
+              // ... Geocoding control options ...
+              providers: [
+                L.esri.Geocoding.arcgisOnlineProvider({
+                  apikey: apiKey
+                })
+              ]
+            }).addTo(map);
+
+            searchControl.on("results", (data) => {
+              // handle results and update the map
+            });
+          </code></pre>
+
+          <a href="https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/">https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/</a>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2>Find service areas</h2>
+          <h3 style="font-size: 0.85em; font-style: italic;">(+ ArcGIS REST JS)</h3>
+            
+          <pre><code class="hljs" data-trim data-line-numbers>
+            const authentication = new arcgisRest.ApiKey({key: apiKey});
+
+            map.on("click", (e) => {
+              // Request service area polygons
+              arcgisRest
+                .serviceArea({
+                  endpoint: "https://route-api.arcgis.com/arcgis/rest/services/World/ServiceAreas/NAServer/ServiceArea_World/solveServiceArea",
+                  authentication,
+                  facilities: [[e.latlng.lng, e.latlng.lat]]
+                })
+                .then((response) => {
+                  // handle response and update the map
+                });
+            });
+          </code></pre>
+
+          <a href="https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/">https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/</a>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h2>Query demographic data</h2>
+          <h3 style="font-size: 0.85em; font-style: italic;">(+ ArcGIS REST JS)</h3>
+            
+          <pre><code class="hljs" data-trim data-line-numbers>
+            const authentication = new arcgisRest.ApiKey({key: apiKey});
+
+            map.on('click', (e) => { getDemographicData(e.latlng); });
+
+            function getDemographicData(latlng) {
+              // request demographic data
+              arcgisRest.queryDemographicData({
+                  studyAreas: [{ "geometry": { "x": latlng.lng, "y": latlng.lat } }],
+                  authentication: authentication
+                })
+                .then((response) => {
+                  // handle response and update the map
+                });
+            }
+          </code></pre>
+
+          <a href="https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/">https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/</a>
         </section>
 
         <!-- ESRI LOGO SLIDE: -->
