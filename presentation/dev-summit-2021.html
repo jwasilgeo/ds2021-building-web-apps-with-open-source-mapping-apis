@@ -247,6 +247,148 @@
           <a href="https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/">https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/</a>
         </section>
 
+        <!-- BEGIN OPENLAYERS SECTION -->
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-3.png">
+          <textarea data-template>
+            ## OpenLayers
+
+            ![alt](/img/open-layers.png)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ## Hello World
+
+            - Imports:
+              - [OpenLayers](https://openlayers.org/en/latest/doc/quickstart.html) (`ol.css` and `ol.js`)
+              - [OpenLayers MapBox Style](https://github.com/openlayers/ol-mapbox-style)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ## Hello World
+
+            ```js
+            const map = new ol.Map({ target: "map" });
+
+            map.setView(
+              new ol.View({
+                center: ol.proj.fromLonLat([-118.805, 34.027]),
+                zoom: 12
+              })
+            );
+            const apiKey = "< YOUR VALID API KEY HERE >";
+            const basemapId = "ArcGIS:Streets";
+            const basemapURL = `https://basemaps-api.arcgis.com/arcgis/rest/services/styles/${basemapId}?type=style&apiKey=${apiKey}`;
+
+            olms(map, basemapURL);
+
+            ```
+            [Full Solution](https://codepen.io/gavinr/pen/vYyGopO?editors=0010)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ## Add Feature Layer
+            #### (as GeoJSON)
+
+            - Create a OL Vector Source
+            - Create a OL Vector Layer
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ## Add Feature Layer
+            #### (as GeoJSON)
+
+            ```js
+            olms(map, basemapURL).then(() => {
+              const pointLayerURL = "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&f=geojson&outSR=4326";
+            
+              const pointSource = new ol.source.Vector({
+                format: new ol.format.GeoJSON(),
+                url: pointLayerURL
+              });
+            
+              const pointLayer = new ol.layer.Vector({
+                source: pointSource
+              });
+              map.addLayer(pointLayer);
+            });
+            ```
+
+            [Full Solution](https://codepen.io/gavinr/pen/mdOPNpV?editors=0010)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ## Routing
+            #### Advanced Demo
+
+            - Use ArcGIS REST JS for the routing API call
+            - Transform data from Web Mercator (3857) to WGS84 (4326) and back
+            - Multiple layers
+          </textarea>
+        </section>
+
+        <section data-background="img/2021/dev-summit/bg-2.png">
+          <h2>Routing</h2>
+          <a href="https://codepen.io/gavinr/pen/vYyGoRO?editors=0010"><video data-autoplay loop="true" src="img/open-layers-routing.mp4"></video></a>
+        </section>
+
+        <!-- CONCLUSION: -->
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-3.png">
+          <textarea data-template>
+            ## Open Source Mapping APIs
+
+            * Leaflet
+            * Mapbox GL JS / MapLibre GL
+            * OpenLayers
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ### Resources: Esri Leaflet
+
+            * Tutorials: 
+              * [developers.arcgis.com/esri-leaflet](https://developers.arcgis.com/esri-leaflet/)
+            * Documentation: 
+              * [esri.github.io/esri-leaflet](https://esri.github.io/esri-leaflet/)
+            * GeoNet (questions): 
+              * [esriurl.com/community-esri-leaflet](https://esriurl.com/community-esri-leaflet)
+            * GitHub (source code & issues): 
+              * [github.com/esri/esri-leaflet](https://github.com/esri/esri-leaflet)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ### Resources: Mapbox GL JS
+              * Tutorials:
+                * [developers.arcgis.com/mapbox-gl-js](https://developers.arcgis.com/mapbox-gl-js/)
+              * GeoNet (questions):
+                * [esriurl.com/community-mapbox-gl-js](https://esriurl.com/community-mapbox-gl-js)
+          </textarea>
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+            ### Resources: OpenLayers
+              * Tutorials:
+                * [developers.arcgis.com/openlayers](https://developers.arcgis.com/openlayers/)
+              * GeoNet (questions):
+                * [esriurl.com/community-openlayers](https://esriurl.com/community-openlayers) 
+          </textarea>
+        </section>
+
         <!-- ESRI LOGO SLIDE: -->
         <section data-background="img/2021/dev-summit/bg-5.png">
           <img src="img/esri-science-logo-white.png" />
