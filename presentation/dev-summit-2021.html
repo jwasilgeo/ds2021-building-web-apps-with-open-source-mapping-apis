@@ -40,7 +40,9 @@
           </p>
           <p style="text-align: left; font-size: 30px">
             slides:
-            <a href="https://www.esriurl.com/ds21os"><code>https://www.esriurl.com/ds21os</code></a>
+            <a href="https://www.esriurl.com/ds21os"
+              ><code>https://www.esriurl.com/ds21os</code></a
+            >
           </p>
         </section>
 
@@ -107,11 +109,11 @@
 
 						| JS API | Open Source | 
 						| --- | --- |
-						| • More capabilities | • Smaller footprint |
-						| • Tighter ArcGIS integrations (web maps, identity, editing) | • Open source licenses + ecosystems |
-						| • Integrated UI widgets | | 
-						| • Extensive 3d support | | 
-						| • 100% Web GL rendering | |
+						| • More capabilities | • Smaller footprint |
+						| • Tighter ArcGIS integrations (web maps, identity, editing) | • Open source licenses + ecosystems |
+						| • Integrated UI widgets | | 
+						| • Extensive 3d support | | 
+						| • 100% Web GL rendering | |
 					</textarea
           >
         </section>
@@ -137,13 +139,20 @@
         <!-- BEGIN LEAFLET SECTION -->
         <section data-background="img/2021/dev-summit/bg-4.png">
           <h2 data-id="code-title">Esri Leaflet</h2>
-          <img src="img/arcgis-leaflet-tutorials.gif" width="500" height="375" alt="ArcGIS for Developers: Leaflet tutorials">
-          <a href="https://developers.arcgis.com/esri-leaflet/">https://developers.arcgis.com/esri-leaflet/</a>
+          <img
+            src="img/arcgis-leaflet-tutorials.gif"
+            width="500"
+            height="375"
+            alt="ArcGIS for Developers: Leaflet tutorials"
+          />
+          <a href="https://developers.arcgis.com/esri-leaflet/"
+            >https://developers.arcgis.com/esri-leaflet/</a
+          >
         </section>
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Hello World!</h2>
-            
+
           <pre><code class="hljs" data-trim data-line-numbers>
             const apiKey = "YOUR-API-KEY";
             const basemapEnum = "ArcGIS:Streets";
@@ -157,12 +166,15 @@
             }).addTo(map);
           </code></pre>
 
-          <a href="https://developers.arcgis.com/esri-leaflet/maps/display-a-map/">https://developers.arcgis.com/esri-leaflet/maps/display-a-map/</a>
+          <a
+            href="https://developers.arcgis.com/esri-leaflet/maps/display-a-map/"
+            >https://developers.arcgis.com/esri-leaflet/maps/display-a-map/</a
+          >
         </section>
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Custom vector tile style</h2>
-            
+
           <pre><code class="hljs" data-trim data-line-numbers>
             const apiKey = "YOUR-API-KEY";
 
@@ -175,12 +187,15 @@
             }).addTo(map);
           </code></pre>
 
-          <a href="https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/">https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/</a>
+          <a
+            href="https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/"
+            >https://developers.arcgis.com/esri-leaflet/styles-and-visualization/display-a-custom-vector-tile-style/</a
+          >
         </section>
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Search for an address</h2>
-            
+
           <pre><code class="hljs" data-trim data-line-numbers>
             const searchControl = L.esri.Geocoding.geosearch({
               // ... Geocoding control options ...
@@ -196,13 +211,18 @@
             });
           </code></pre>
 
-          <a href="https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/">https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/</a>
+          <a
+            href="https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/"
+            >https://developers.arcgis.com/esri-leaflet/geocode-and-search/search-for-an-address/</a
+          >
         </section>
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Find service areas</h2>
-          <h3 style="font-size: 0.85em; font-style: italic;">(+ ArcGIS REST JS)</h3>
-            
+          <h3 style="font-size: 0.85em; font-style: italic">
+            (+ ArcGIS REST JS)
+          </h3>
+
           <pre><code class="hljs" data-trim data-line-numbers>
             const authentication = new arcgisRest.ApiKey({key: apiKey});
 
@@ -220,13 +240,18 @@
             });
           </code></pre>
 
-          <a href="https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/">https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/</a>
+          <a
+            href="https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/"
+            >https://developers.arcgis.com/esri-leaflet/route-and-directions/find-service-areas/</a
+          >
         </section>
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Query demographic data</h2>
-          <h3 style="font-size: 0.85em; font-style: italic;">(+ ArcGIS REST JS)</h3>
-            
+          <h3 style="font-size: 0.85em; font-style: italic">
+            (+ ArcGIS REST JS)
+          </h3>
+
           <pre><code class="hljs" data-trim data-line-numbers>
             const authentication = new arcgisRest.ApiKey({key: apiKey});
 
@@ -244,7 +269,84 @@
             }
           </code></pre>
 
-          <a href="https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/">https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/</a>
+          <a
+            href="https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/"
+            >https://developers.arcgis.com/esri-leaflet/demographic-data/query-demographic-data/</a
+          >
+        </section>
+
+        <!-- BEGIN MapBox GL JS SECTION -->
+
+        <section data-background="img/2021/dev-summit/bg-5.png">
+          <h4>MapBox GL JS / MapLibre GL JS</h4>
+          <img src="img/mapbox-1-overview.gif" style="width: 50%" />
+          <a href="https://developers.arcgis.com/mapbox-gl-js/"
+            >https://developers.arcgis.com/mapbox-gl-js/</a
+          >
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+          ### Why the split?
+
+          * MapBox GL JS 2.x - Not open source. API key from MapBox.
+          * MapBox GL JS 1.x - Open source, no active development.
+          * MapLibre GL JS - Open source fork of MapBox GL JS 1.x
+					</textarea
+          >
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+          ### Basemap + Services
+
+          <img src="img/mapbox-2-basic.png" style="width: 50%" />
+
+          [Doc](https://developers.arcgis.com/mapbox-gl-js/geocode-and-search/search-for-an-address/)
+					</textarea
+          >
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+          ### Host and query data
+
+          <img src="img/mapbox-3-query.png" style="width: 50%" />
+
+          [SQL Queries](https://developers.arcgis.com/mapbox-gl-js/query-and-edit/query-a-feature-layer-sql/) / [Spatial Queries](https://developers.arcgis.com/mapbox-gl-js/query-and-edit/query-a-feature-layer-spatial/)
+
+					</textarea
+          >
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-2.png">
+          <textarea data-template>
+          ### Create and host vector tiles
+
+          <img src="img/mapbox-4-trails.png" style="width: 50%" />
+          
+          [About
+          VTL](https://developers.arcgis.com/documentation/mapping-apis-and-location-services/data-hosting/hosted-vector-tile-layers/)
+          / [Custom
+          VTL](https://developers.arcgis.com/mapbox-gl-js/style-and-data-visualization/display-a-custom-vector-tile-style/)
+          / [Full Demo](https://codepen.io/patrickarlt/pen/poNEBrR?editors=1000)
+					</textarea
+          >
+        </section>
+
+        <section data-markdown data-background="img/2021/dev-summit/bg-4.png">
+          <textarea data-template>
+          ### Final considerations
+
+          * Queries to end points are rate limited
+          * Prefer publishing data as vector tile layers
+          * Leverate ArcGIS REST JS for services
+					</textarea
+          >
+          [About vector tile
+          layers](https://developers.arcgis.com/documentation/mapping-apis-and-location-services/data-hosting/hosted-vector-tile-layers/)
+          / [Custom vector tile
+          layer](https://developers.arcgis.com/mapbox-gl-js/style-and-data-visualization/display-a-custom-vector-tile-style/)
         </section>
 
         <!-- BEGIN OPENLAYERS SECTION -->
@@ -339,7 +441,13 @@
 
         <section data-background="img/2021/dev-summit/bg-2.png">
           <h2>Routing</h2>
-          <a href="https://codepen.io/gavinr/pen/vYyGoRO?editors=0010"><video data-autoplay loop="true" src="img/open-layers-routing.mp4"></video></a>
+          <a href="https://codepen.io/gavinr/pen/vYyGoRO?editors=0010"
+            ><video
+              data-autoplay
+              loop="true"
+              src="img/open-layers-routing.mp4"
+            ></video
+          ></a>
         </section>
 
         <!-- CONCLUSION: -->
