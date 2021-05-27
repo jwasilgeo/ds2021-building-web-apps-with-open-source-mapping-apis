@@ -10,6 +10,8 @@ Short link: <https://esriurl.com/ds21os>
 
 Full link: <https://jwasilgeo.github.io/ds2021-building-web-apps-with-open-source-mapping-apis/presentation/dev-summit-2021.html>
 
+Recording: https://youtu.be/zVaDFveUTUQ
+
 ## Contents
 
 - Reveal.js presentation slide deck (`presentation/`)
